@@ -16,9 +16,7 @@ export class M3oService {
       headers: {
         "Micro-Namespace": [this.namespace]
       },
-      params: {
-
-      }
+      params: params,
     }).toPromise()
   }
 }

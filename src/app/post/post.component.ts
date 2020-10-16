@@ -16,6 +16,9 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
     const that = this
     this.route.paramMap.subscribe((paramMap) => {
+      if (paramMap.get('slug').length == 0) {
+        throw("Slug should not be empty")
+      }
       that.m3o
         .get(
           'posts',
