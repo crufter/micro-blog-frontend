@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  m3oAddress: "http://127.0.0.1:8080"
+  m3oAddress: "http://127.0.0.1:8080",
+  m3oNamespace: "micro"
 };
 
 /*

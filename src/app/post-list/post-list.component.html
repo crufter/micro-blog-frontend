@@ -1,4 +1,6 @@
 <div *ngFor="let post of posts">
-  <h1>{{ post["title"] }}</h1>
-  {{ post["content"] | excerpt:50 }}
+  <h1>
+    <a [href]="'/post/' + post['slug']">{{ post["title"] }}</a>
+  </h1>
+  {{ post["content"] | excerpt: 50 }}
 </div>

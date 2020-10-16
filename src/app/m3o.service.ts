@@ -7,7 +7,7 @@ import { environment } from '../environments/environment';
 })
 export class M3oService {
   public address: string = environment.m3oAddress;
-  public namespace: string = "micro";
+  public namespace: string = environment.m3oNamespace;
 
   constructor(private http: HttpClient) { }
 

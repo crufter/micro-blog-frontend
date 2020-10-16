@@ -1,1 +1,8 @@
-<p>post works!</p>
+<div *ngIf="post">
+  <h1>
+    {{ post["title"] }}
+  </h1>
+  <p>
+    {{ post["content"] }}
+  </p>
+</div>
