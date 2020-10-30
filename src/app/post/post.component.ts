@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostComponent implements OnInit {
   post: Object;
+  comments: Object[];
 
   constructor(private m3o: M3oService, private route: ActivatedRoute) {}
 
@@ -31,6 +32,17 @@ export class PostComponent implements OnInit {
         )
         .then((v) => {
           that.post = v['posts'][0];
+          that.m3o.get(
+            'comments',
+            'list',
+            new HttpParams({
+              fromObject: {
+                post: that.post["id"],
+              },
+            })
+          ) .then((v) => {
+            that.comments = v["comments"]
+          })
         });
     });
   }
